@@ -1,5 +1,65 @@
-{% extends 'principal/base.html' %} 
-{% block title %}Locura Achocolatada{% endblock %} 
-{% block content %}
-<h2 class="text-xl">Inicio</h2>
+{% extends 'principal/base.html' %} {% load static %} {% block title %}Locura
+Achocolatada{% endblock %} {% block content %}
+<!-- Encabezado del inicio -->
+<div class="bg-custom-dark-pink">
+    <div class="flex w-full">
+        <img
+            class="m-auto p-3"
+            src="{% static '/img/logo.png' %}"
+            alt="Locura Achocolatada"
+            width="340"
+        />
+    </div>
+    <p class="text-center text-white">
+        Chocolates sin gluten y sin azúcar para veganos
+    </p>
+    <div class="flex justify-center py-4">
+        <a
+            href="https://wa.me/+56912345678"
+            class="mx-4 flex items-center hover:text-white"
+        >
+            <div
+                class="flex h-10 w-10 items-center justify-center rounded-full bg-custom-brown text-custom-dark-pink"
+            >
+                <i class="fa-brands fa-whatsapp fa-xl"></i>
+            </div>
+            <p class="ml-1">+569 1234 5678</p>
+        </a>
+        <a
+            href="https://www.instagram.com/locura._achocolatada"
+            class="mx-4 flex items-center hover:text-white"
+        >
+            <div
+                class="flex h-10 w-10 items-center justify-center rounded-full bg-custom-brown text-custom-dark-pink"
+            >
+                <i class="fa-brands fa-instagram fa-xl"></i>
+            </div>
+            <p class="ml-1">@locura._achocolatada</p>
+        </a>
+        <a
+            href="https://www.facebook.com/profile.php?id=100005907791678"
+            class="mx-4 flex items-center hover:text-white"
+        >
+            <div
+                class="flex h-10 w-10 items-center justify-center rounded-full bg-custom-brown text-custom-dark-pink"
+            >
+                <i class="fa-brands fa-facebook-f fa-xl"></i>
+            </div>
+            <p class="ml-1">@locura._achocolatada</p>
+        </a>
+    </div>
+</div>
+
+<div class="mx-5">
+    <!-- Productos en promocion -->
+    <h1 class="m-2 text-center text-xl font-semibold text-custom-brown">
+        Promociones
+    </h1>
+    <hr />
+    <!-- Productos favoritos -->
+    <h1 class="m-2 text-center text-xl font-semibold text-custom-brown">
+        Favoritos
+    </h1>
+    <hr />
+</div>
 {% endblock %}

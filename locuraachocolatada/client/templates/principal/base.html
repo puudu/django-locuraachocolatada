@@ -6,25 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %}Locula Achocolatada{% endblock %}</title>
+    <link rel="icon" type="image/png" href="{% static '/img/logo_min_square.png' %}"/>
+    <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
 
     <link rel="stylesheet" href="{% static 'css/output.css' %}" />
   </head>
-  <body>
-    <header>
-      <h1 class="bg-pink-400 m-2 text-center">Locura Achocolatada</h1>
+  </body>
+    <header class="bg-custom-brown flex justify-start p-2 items-center">
+      <img class="mr-3" src="{% static '/img/logo_min.png' %}" alt="Locura Achocolatada" width=40 />
       <nav>
-        <ul class="flex justify-center">
-          <li class="mx-3 rounded-md bg-pink-200 p-2 hover:bg-pink-400">
-            <a href="/">Inicio</a>
+        <ul class="flex justify-center items-center">
+          <li>
+            <a class="w-30 mx-1 rounded-full p-2 hover:bg-custom-pink border-2 border-custom-pink text-white px-5" href="/">Inicio</a>
           </li>
-          <li class="mx-3 rounded-md bg-pink-200 p-2 hover:bg-pink-400">
-            <a href="/productos/">Productos</a>
+          <li>
+            <a class="w-30 mx-1 rounded-full p-2 hover:bg-custom-pink border-2 border-custom-pink text-white px-5" href="/productos/">Productos</a>
           </li>
-          <li class="mx-3 rounded-md bg-pink-200 p-2 hover:bg-pink-400">
-            <a href="/quienes-somos/">Quienes somos</a>
+          <li>
+            <a class="w-30 mx-1 rounded-full p-2 hover:bg-custom-pink border-2 border-custom-pink text-white px-5" href="/quienes-somos/">Quienes somos</a>
           </li>
-          <li class="mx-3 rounded-md bg-pink-200 p-2 hover:bg-pink-400">
-            <a href="/terminos-y-condiciones/">Términos y condiciones</a>
+          <li>
+            <a class="w-30 mx-1 rounded-full p-2 hover:bg-custom-pink border-2 border-custom-pink text-white px-5" href="/terminos-y-condiciones/">Términos y condiciones</a>
           </li>
         </ul>
       </nav>
@@ -32,8 +36,19 @@
 
     <main>{% block content %}{% endblock %}</main>
 
-    <footer>
-      <p>Footer</p>
+    <footer class="bg-custom-brown">
+    <div class="p-3">
+      <h2 class="text-custom-pink px-1">Contáctanos</h2>
+      <ul class="text-white ml-4">
+        <li>• Horario de atención: Lunes a Sábado 9 a 18 hrs</li>
+        <li>• WhatsApp: <a class="hover:text-custom-pink" href="https://wa.me/+56912345678">+56 9 1234 5678</a></li>
+        <li>• Instagram: <a class="hover:text-custom-pink" href="https://www.instagram.com/locura._achocolatada">@locura._achocolatada</a></li>
+        <li>• Correo: <a class="hover:text-custom-pink" href="mailto:contacto@loculaachocolatada.cl">contacto@loculaachocolatada.cl</a></li>
+      </ul>
+    </div>
+      <div class="flex justify-end">
+        <img class="m-3" src="{% static '/img/logo.png' %}" alt="Locura Achocolatada" width=200 />
+      </div>
     </footer>
   </body>
 </html>
