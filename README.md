@@ -33,7 +33,7 @@ python manage.py runserver
 5. Opcional: Si necesitas hacer cambios en las clases de los templates y actualizar Tailwind CSS, puedes iniciar el observador de Tailwind con el siguiente comando:
 
 ```bash
-npx tailwindcss -o locuraachocolatada/static/css/output.css --watch
+npm run dev
 ```
 
 Este comando observa los componentes utilizados en el proyecto y los actualiza en el archivo output.css.
