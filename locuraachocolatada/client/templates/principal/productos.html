@@ -1,5 +1,44 @@
-{% extends 'principal/base.html' %} 
-{% block title %}Productos | Locura Achocolatada{% endblock %} 
-{% block content %}
-<h2 class="text-xl">Productos</h2>
+{% extends 'principal/base.html' %} {% load static %} {% block title %}Productos
+| Locura Achocolatada{% endblock %} {% block content %}
+<div class="bg-custom-dark-pink">
+    <h1 class="pt-2 text-center text-xl font-semibold text-white">Productos</h1>
+    <div class="grid grid-cols-5 px-12 py-2">
+        <!-- Categorias -->
+        <button
+            class="m-2 rounded-full border-2 border-custom-pink px-3 py-1.5 text-white hover:bg-custom-pink"
+        >
+            Categoria 1
+        </button>
+    </div>
+</div>
+<div
+    class="my-2 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5 xl:grid-cols-7"
+>
+    <!-- Tarjeta de producto -->
+    <div class="p-3 text-center">
+        <img
+            src="{% static 'img/temp/temp2.jpg' %}"
+            alt=""
+            width="200"
+            class="m-auto rounded-lg"
+        />
+        <h3 class="font-bold">Nombre producto</h3>
+        <!-- Descuento -->
+        <div class="flex justify-center">
+            <p class="mx-1 text-gray-400 line-through">$9990</p>
+            <p
+                class="mx-1 my-auto rounded-md bg-custom-dark-pink p-1 text-xs text-white"
+            >
+                -20%
+            </p>
+        </div>
+        <!-- Precio final -->
+        <p class="mb-1 font-semibold">$7990</p>
+        <button
+            class="w-full rounded-full border-2 border-custom-brown p-1.5 font-semibold text-custom-brown hover:bg-custom-brown hover:text-white"
+        >
+            Pedir
+        </button>
+    </div>
+</div>
 {% endblock %}
