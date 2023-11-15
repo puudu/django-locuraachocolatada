@@ -1,55 +1,124 @@
 {% load static %}
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{% block title %}Locula Achocolatada{% endblock %}</title>
-    <link rel="icon" type="image/png" href="{% static '/img/logo_min_square.png' %}"/>
-    <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
-    <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
-    <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{% block title %}Locula Achocolatada{% endblock %}</title>
+        <link
+            rel="icon"
+            type="image/png"
+            href="{% static '/img/logo_min_square.png' %}"
+        />
+        <link
+            href="{% static 'fontawesomefree/css/fontawesome.css' %}"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="{% static 'fontawesomefree/css/brands.css' %}"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="{% static 'fontawesomefree/css/solid.css' %}"
+            rel="stylesheet"
+            type="text/css"
+        />
 
-    <link rel="stylesheet" href="{% static 'css/output.css' %}" />
-  </head>
-  </body>
-    <header class="bg-custom-brown flex md:justify-start p-2 items-center justify-between">
-      <img class="mr-3" src="{% static '/img/logo_min.png' %}" alt="Locura Achocolatada" width=40 />
-      <button class="text-custom-pink p-2 block md:hidden"><i class="fas fa-bars fa-xl"></i></button>
-      <nav class="hidden md:block">
-        <ul class="flex md:justify-center items-center md:items-center flex-col md:flex-row absolute md:static">
-          <li class="my-3">
-            <a class="mx-1 rounded-full p-2 hover:bg-custom-pink border-2 border-custom-pink text-white px-5 " href="/">Inicio</a>
-          </li>
-          <li class="my-3">
-            <a class="mx-1 rounded-full p-2 hover:bg-custom-pink border-2 border-custom-pink text-white px-5" href="/productos/">Productos</a>
-          </li>
-          <li class="my-3">
-            <a class="mx-1 rounded-full p-2 hover:bg-custom-pink border-2 border-custom-pink text-white px-5" href="/quienes-somos/">Quienes somos</a>
-          </li>
-          <li class="my-3">
-            <a class="mx-1 rounded-full p-2 hover:bg-custom-pink border-2 border-custom-pink text-white px-5" href="/terminos-y-condiciones/">Términos y condiciones</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+        <link rel="stylesheet" href="{% static 'css/output.css' %}" />
+    </head>
+    <body class="bg-custom-brown">
+        <header
+            class="flex items-center justify-between bg-custom-brown p-2 md:justify-start"
+        >
+            <img
+                class="mr-3"
+                src="{% static '/img/logo_min.png' %}"
+                alt="Locura Achocolatada"
+                width="40"
+            />
+            <button class="block p-2 text-custom-pink md:hidden">
+                <i class="fas fa-bars fa-xl"></i>
+            </button>
+            <nav class="hidden md:block">
+                <ul
+                    class="absolute flex flex-col items-center md:static md:flex-row md:items-center md:justify-center"
+                >
+                    <li class="my-3">
+                        <a
+                            class="mx-1 rounded-full border-2 border-custom-pink p-2 px-5 text-white hover:bg-custom-pink"
+                            href="/"
+                            >Inicio</a
+                        >
+                    </li>
+                    <li class="my-3">
+                        <a
+                            class="mx-1 rounded-full border-2 border-custom-pink p-2 px-5 text-white hover:bg-custom-pink"
+                            href="/productos/"
+                            >Productos</a
+                        >
+                    </li>
+                    <li class="my-3">
+                        <a
+                            class="mx-1 rounded-full border-2 border-custom-pink p-2 px-5 text-white hover:bg-custom-pink"
+                            href="/quienes-somos/"
+                            >Quienes somos</a
+                        >
+                    </li>
+                    <li class="my-3">
+                        <a
+                            class="mx-1 rounded-full border-2 border-custom-pink p-2 px-5 text-white hover:bg-custom-pink"
+                            href="/terminos-y-condiciones/"
+                            >Términos y condiciones</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
-    <main>{% block content %}{% endblock %}</main>
+        <main class="bg-white">{% block content %}{% endblock %}</main>
 
-    <footer class="bg-custom-brown">
-    <div class="p-3">
-      <h2 class="text-custom-pink px-1">Contáctanos</h2>
-      <ul class="text-white ml-4">
-        <li>• Horario de atención: Lunes a Sábado 9 a 18 hrs</li>
-        <li>• WhatsApp: <a class="hover:text-custom-pink" href="https://wa.me/+56912345678">+56 9 1234 5678</a></li>
-        <li>• Instagram: <a class="hover:text-custom-pink" href="https://www.instagram.com/locura._achocolatada">@locura._achocolatada</a></li>
-        <li>• Correo: <a class="hover:text-custom-pink" href="mailto:contacto@loculaachocolatada.cl">contacto@loculaachocolatada.cl</a></li>
-      </ul>
-    </div>
-      <div class="flex justify-end">
-        <img class="m-3" src="{% static '/img/logo.png' %}" alt="Locura Achocolatada" width=200 />
-      </div>
-    </footer>
-  </body>
+        <footer class="bg-custom-brown">
+            <div class="p-3">
+                <h2 class="px-1 text-custom-pink">Contáctanos</h2>
+                <ul class="ml-4 text-white">
+                    <li>• Horario de atención: Lunes a Sábado 9 a 18 hrs</li>
+                    <li>
+                        • WhatsApp:
+                        <a
+                            class="hover:text-custom-pink"
+                            href="https://wa.me/+56912345678"
+                            >+56 9 1234 5678</a
+                        >
+                    </li>
+                    <li>
+                        • Instagram:
+                        <a
+                            class="hover:text-custom-pink"
+                            href="https://www.instagram.com/locura._achocolatada"
+                            >@locura._achocolatada</a
+                        >
+                    </li>
+                    <li>
+                        • Correo:
+                        <a
+                            class="hover:text-custom-pink"
+                            href="mailto:contacto@loculaachocolatada.cl"
+                            >contacto@loculaachocolatada.cl</a
+                        >
+                    </li>
+                </ul>
+            </div>
+            <div class="flex justify-end">
+                <img
+                    class="m-3"
+                    src="{% static '/img/logo.png' %}"
+                    alt="Locura Achocolatada"
+                    width="200"
+                />
+            </div>
+        </footer>
+    </body>
 </html>
