@@ -847,6 +847,11 @@ video {
   background-color: rgb(179 85 106 / var(--tw-bg-opacity));
 }
 
+.bg-custom-pink {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 132 151 / var(--tw-bg-opacity));
+}
+
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -993,6 +998,10 @@ video {
 
   .md\:flex {
     display: flex;
+  }
+
+  .md\:hidden {
+    display: none;
   }
 
   .md\:grid-cols-3 {

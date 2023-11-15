@@ -14,8 +14,9 @@
     <link rel="stylesheet" href="{% static 'css/output.css' %}" />
   </head>
   </body>
-    <header class="bg-custom-brown md:flex md:justify-start p-2 items-center">
+    <header class="bg-custom-brown flex md:justify-start p-2 items-center justify-between">
       <img class="mr-3" src="{% static '/img/logo_min.png' %}" alt="Locura Achocolatada" width=40 />
+      <button class="text-custom-pink p-2 block md:hidden"><i class="fas fa-bars fa-xl"></i></button>
       <nav class="hidden md:block">
         <ul class="flex md:justify-center items-center md:items-center flex-col md:flex-row absolute md:static">
           <li class="my-3">
