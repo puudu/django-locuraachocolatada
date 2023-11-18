@@ -1,11 +1,16 @@
 from django.shortcuts import render
+from client.models import *
 
 # Create your views here.
 def inicio(request):
     return render(request, 'principal/inicio.html')
     
 def productos(request):
-    return render(request, 'principal/productos.html')
+    productos = Producto.objects.all()
+    data={
+        'productos':productos
+    }
+    return render(request, 'principal/productos.html',data)
 
 def quienes_somos(request):
     return render(request, 'principal/quienes_somos.html')

@@ -13,6 +13,7 @@ class Producto (models.Model):
     oferta=models.BooleanField(null=True, blank=True)
     descuento_oferta=models.IntegerField(null=True,blank=True)
     categoria=models.ForeignKey(Categoria, on_delete=models.CASCADE)
+    imagen=models.ImageField(upload_to='productos/',null=False, default='productos/default_image.jpg')
 
     def __str__(self):
         return self.nombre
