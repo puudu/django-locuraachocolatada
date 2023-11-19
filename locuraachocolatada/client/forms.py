@@ -19,5 +19,6 @@ class productosForm (forms.ModelForm):
             'descuento_oferta':forms.NumberInput(attrs={'class':'label-forms','label':'Ingrese el descuento si es que aplica la oferta.','placeholder':'Porcentaje del descuento'}),
             'categoria':forms.Select(attrs={'label':"Escoja una categoria para el producto"}),
             'imagen':forms.ClearableFileInput(attrs={'class': 'label-forms', 'placeholder': 'Sube la imagen del producto'}),
-            'oferta': forms.RadioSelect()
+            'oferta': forms.RadioSelect(),
+            'popular': forms.BooleanField(attrs={'class':'label-forms','label':'Habilitar para que se muestre en la seccion de productos más vendidos en la página principal'}),
         }
