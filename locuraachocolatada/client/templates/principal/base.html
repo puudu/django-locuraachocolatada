@@ -31,6 +31,7 @@
     </head>
     <body class="bg-custom-brown">
         <header
+            id="header"
             class="flex items-center justify-between bg-custom-brown p-2 md:justify-start"
         >
             <img
@@ -39,12 +40,11 @@
                 alt="Locura Achocolatada"
                 width="40"
             />
-            <button class="block p-2 text-custom-pink md:hidden">
-                <i class="fas fa-bars fa-xl"></i>
-            </button>
-            <nav class="hidden md:block">
+
+            <nav id="navbar" class="hidden md:block">
                 <ul
-                    class="absolute flex flex-col items-center md:static md:flex-row md:items-center md:justify-center"
+                
+                    class=" flex flex-col items-center md:static md:flex-row md:items-center md:justify-center"
                 >
                     <li class="my-3">
                         <a
@@ -75,7 +75,11 @@
                         >
                     </li>
                 </ul>
+                
             </nav>
+            <button id="toggleButton" class="block p-2 text-custom-pink md:hidden">
+                <i class="fas fa-bars fa-xl"></i>
+            </button>
         </header>
 
         <main class="bg-white">{% block content %}{% endblock %}</main>
@@ -121,4 +125,14 @@
             </div>
         </footer>
     </body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggleButton = document.getElementById('toggleButton');
+            const navbar = document.getElementById('navbar');
+    
+            toggleButton.addEventListener('click', function () {
+                navbar.classList.toggle('hidden');
+            });
+        });
+    </script>    
 </html>

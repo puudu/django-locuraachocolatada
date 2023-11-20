@@ -20,5 +20,5 @@ class productosForm (forms.ModelForm):
             'categoria':forms.Select(attrs={'label':"Escoja una categoria para el producto"}),
             'imagen':forms.ClearableFileInput(attrs={'class': 'label-forms', 'placeholder': 'Sube la imagen del producto'}),
             'oferta': forms.RadioSelect(),
-            'popular': forms.BooleanField(attrs={'class':'label-forms','label':'Habilitar para que se muestre en la seccion de productos más vendidos en la página principal'}),
+            'popular': forms.BooleanField(),
         }
