@@ -56,7 +56,7 @@
                     <li class="my-3">
                         <a
                             class="mx-1 rounded-full border-2 border-custom-pink p-2 px-5 text-white hover:bg-custom-pink"
-                            href="/productos/"
+                            href="/productos/1/"
                             >Productos</a
                         >
                     </li>
@@ -88,29 +88,29 @@
             <div class="p-3">
                 <h2 class="px-1 text-custom-pink">Contáctanos</h2>
                 <ul class="ml-4 text-white">
-                    <li>• Horario de atención: Lunes a Sábado 9 a 18 hrs</li>
+                    <li>• Horario de atención: {{data.horario_atencion}}</li>
                     <li>
                         • WhatsApp:
                         <a
                             class="hover:text-custom-pink"
-                            href="https://wa.me/+56912345678"
-                            >+56 9 1234 5678</a
+                            href="https://wa.me/{{data.nro_whatsapp}}"
+                            >{{data.nro_whatsapp}}</a
                         >
                     </li>
                     <li>
                         • Instagram:
                         <a
                             class="hover:text-custom-pink"
-                            href="https://www.instagram.com/locura._achocolatada"
-                            >@locura._achocolatada</a
+                            href={{data.enlace_instagram}}
+                            >@{{data.username_instagram}}</a
                         >
                     </li>
                     <li>
                         • Correo:
                         <a
                             class="hover:text-custom-pink"
-                            href="mailto:contacto@loculaachocolatada.cl"
-                            >contacto@loculaachocolatada.cl</a
+                            href="mailto:{{data.correo_contacto}}"
+                            >{{data.correo_contacto}}</a
                         >
                     </li>
                 </ul>

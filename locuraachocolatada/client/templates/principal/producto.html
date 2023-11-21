@@ -1,43 +1,39 @@
-{% extends 'principal/base.html' %} {% load static %} {% block title %}Productos
-| Locura Achocolatada{% endblock %} {% block content %}
+{% extends 'principal/base.html' %} {% load static %} {% load humanize %}  
+{% block title %}Productos | Locura Achocolatada{% endblock %} {% block content %}
 <div class="px-3 py-20 lg:flex lg:justify-start">
     <img
-        class="mx-auto rounded-lg"
-        src="{% static 'img/temp/temp2.jpg' %}"
-        alt=""
+        class="mx-1 rounded-lg"
+        src="{% static producto.imagen %}"
+        alt={{producto.nombre}}
         width="380"
     />
     <div class="m-2">
-        <h2 class="text-xl font-bold">Nombre producto</h2>
+        <h2 class="text-xl font-bold">{{producto.nombre}}</h2>
         <div class="flex justify-start align-middle">
+            {% if producto.oferta %} 
             <!-- Descuento -->
-            <p class="mx-1 my-auto text-gray-400 line-through">$9990</p>
+            <p class="mx-1 my-auto text-gray-400 line-through">${{producto.precio}}</p>
             <p
                 class="mx-1 my-auto rounded-md bg-custom-dark-pink p-1 text-xs text-white"
             >
-                -20%
+                -{{producto.porcentaje_descuento}}%
             </p>
+            {% endif %}
             <!-- Precio final -->
-            <p class="mb-1 text-lg font-semibold">$7990</p>
+            <p class="mb-1 text-lg font-semibold">${{producto.precio_final}}</p>
         </div>
         <!-- Descripcion -->
         <p class="text-justify">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
-            ab nesciunt quaerat! Ad, expedita ex? Dolore natus sapiente aliquam
-            maiores. Aspernatur maiores repellat accusantium, facilis soluta
-            dolor quos voluptate delectus. Lorem ipsum dolor, sit amet
-            consectetur adipisicing elit. Deserunt inventore iure, laboriosam
-            possimus suscipit cupiditate repellendus debitis nobis libero
-            consequuntur, totam quaerat ratione harum eligendi ipsum veritatis,
-            corrupti culpa? Delectus?
+            {{producto.descripcion}}
         </p>
         <div class="flex justify-center">
-            <button
-                class="mx-auto my-2 rounded-full border-2 border-custom-brown px-3 py-2 text-lg text-custom-brown hover:bg-custom-brown hover:text-white"
+            <a
+                class="text-center mx-auto my-2 rounded-full border-2 border-custom-brown px-3 py-2 text-lg text-custom-brown hover:bg-custom-brown hover:text-white"
+                href="https://wa.me/{{data.nro_whatsapp}}"
             >
                 <i class="fa-brands fa-whatsapp fa-xl"></i>
                 Pedir por WhatsApp
-            </button>
+            </a>
         </div>
     </div>
 </div>

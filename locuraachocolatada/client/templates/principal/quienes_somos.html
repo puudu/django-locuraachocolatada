@@ -1,6 +1,6 @@
 {% extends 'principal/base.html' %} {% load static %} {% block title %}Quiénes
 somos | Locura Achocolatada{% endblock %} {% block content %}
-<div class="mx-5">
+<div class="mx-5 py-5">
     <div class="my-3 lg:flex">
         <img
             src="{% static '/img/temp/temp0.png' %}"
@@ -15,26 +15,7 @@ somos | Locura Achocolatada{% endblock %} {% block content %}
                 <hr />
             </h1>
             <p class="mt-2 text-justify">
-                ¡Hola, soy [Tu Nombre], la mente creativa detrás de Locura
-                Achocolatada! Soy una apasionada emprendedora que ha dedicado su
-                corazón y alma a crear delicias achocolatadas que llenen tus
-                momentos de dulzura y alegría. ¿Por qué elegir Locura
-                Achocolatada? Porque aquí encontrarás mucho más que simples
-                chocolates; encontrarás una experiencia única y consciente. En
-                mi pequeño rincón de chocolate, nos enorgullecemos de ofrecer
-                opciones para todos los gustos y necesidades. Desde bombones
-                irresistibles hasta exquisitos productos sin gluten y sin
-                azúcar, pasando por creaciones veganas que te harán deslumbrar
-                tus papilas gustativas. Cada pieza que sale de nuestra
-                chocolatería es un reflejo de mi dedicación a la calidad y a la
-                innovación. Utilizamos solo los ingredientes más selectos para
-                brindarte el sabor más auténtico y la frescura que mereces.
-                Estoy aquí para convertir cada ocasión en un momento memorable,
-                ya sea celebrando un logro, regalando amor o simplemente
-                endulzando tu día. ¡Juntos crearemos una experiencia
-                achocolatada que no olvidarás! Gracias por ser parte de esta
-                deliciosa aventura. ¡Espero que disfrutes cada bocado tanto como
-                yo disfruto crearlos para ti!
+                {{data.sobre_nosotros}}
             </p>
         </div>
     </div>
@@ -48,19 +29,7 @@ somos | Locura Achocolatada{% endblock %} {% block content %}
                 <hr />
             </h1>
             <p class="mt-2 text-justify">
-                En Locura Achocolatada, creamos con pasión una amplia gama de
-                exquisitos chocolates y dulces que se adaptan a diversas
-                necesidades dietéticas. Nuestros productos sin gluten están
-                elaborados con ingredientes certificados, libres de
-                contaminación cruzada, para que todos puedan disfrutar sin
-                preocupaciones. Para aquellos que buscan opciones sin azúcar,
-                ofrecemos delicias endulzadas con alternativas naturales,
-                manteniendo el sabor auténtico. Además, nuestra línea vegana
-                utiliza ingredientes de origen vegetal de alta calidad,
-                proporcionando opciones éticas y respetuosas con el medio
-                ambiente. En Locura Achocolatada, nos esforzamos por crear
-                momentos de alegría y sabor para todos, sin importar las
-                preferencias dietéticas.
+                {{data.descripcion_prductos}}
             </p>
         </div>
         <img

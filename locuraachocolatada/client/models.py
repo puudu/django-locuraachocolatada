@@ -7,7 +7,7 @@ class Categoria (models.Model):
         return self.nombre
 
 class Producto (models.Model):
-    nombre= models.CharField(max_length=10)
+    nombre= models.CharField(max_length=30)
     descripcion= models.TextField()
     precio= models.IntegerField()
     oferta=models.BooleanField(null=True, blank=True)
@@ -25,6 +25,7 @@ class descripcionEmpresa(models.Model):
     terminos_y_condiciones=models.TextField()
     horario_atencion = models.CharField(max_length=120)
     nro_whatsapp = models.CharField(max_length=12)
+    correo_contacto = models.EmailField(default='contacto@correo.cl')
     username_instagram = models.CharField(max_length=60)
     enlace_instagram = models.CharField(max_length=120)
     username_facebook = models.CharField(max_length=60)

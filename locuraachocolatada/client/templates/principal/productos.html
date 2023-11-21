@@ -1,44 +1,53 @@
-{% extends 'principal/base.html' %} {% load static %} {% block title %}Productos
+{% extends 'principal/base.html' %} {% load static %} {% load humanize %} {% block title %}Productos
 | Locura Achocolatada{% endblock %} {% block content %}
 <div class="bg-custom-dark-pink">
     <h1 class="pt-2 text-center text-xl font-semibold text-white">Productos</h1>
     <div class="grid grid-cols-2 px-12 py-2 sm:grid-cols-3 lg:grid-cols-5">
         <!-- Categorias -->
-        <button
-            class="m-2 rounded-full border-2 border-custom-pink px-3 py-1.5 text-white hover:bg-custom-pink"
+        {% for categoria in categorias %}
+        <a
+            href = "/productos/{{categoria.id}}/"
+            class="m-2 rounded-full border-2 {% if categoria.id == categoria_actual.id %} bg-custom-pink {% endif %} border-custom-pink px-3 py-1.5 text-white hover:bg-custom-pink text-center"
         >
-            Categoria 1
-        </button>
+            {{categoria.nombre}}
+        </a>
+        {% endfor %}
     </div>
 </div>
 <div
     class="my-2 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5 xl:grid-cols-7"
 >
+{% for producto in productos %}
     <!-- Tarjeta de producto -->
-    <div class="p-3 text-center">
+    <div class="p-3 text-center m-auto">
         <img
-            src="{% static 'img/temp/temp2.jpg' %}"
+            src="{% static producto.imagen %}"
             alt=""
             width="200"
-            class="m-auto rounded-lg"
+            class="m-auto rounded-lg object-cover h-40 w-40"
         />
-        <h3 class="font-bold">Nombre producto</h3>
+        <h3 class="font-bold">{{producto.nombre}}</h3>
         <!-- Descuento -->
+        {% if producto.oferta %}
         <div class="flex justify-center">
-            <p class="mx-1 text-gray-400 line-through">$9990</p>
+            <p class="mx-1 text-gray-400 line-through">${{producto.precio|intcomma}}</p>
             <p
                 class="mx-1 my-auto rounded-md bg-custom-dark-pink p-1 text-xs text-white"
             >
-                -20%
+                -{{producto.porcentaje_descuento}}%
             </p>
         </div>
+        {% endif %}
         <!-- Precio final -->
-        <p class="mb-1 font-semibold">$7990</p>
-        <button
-            class="w-full rounded-full border-2 border-custom-brown p-1.5 font-semibold text-custom-brown hover:bg-custom-brown hover:text-white"
-        >
-            Pedir
-        </button>
+        <p class="mb-1 font-semibold">${{producto.precio_final|intcomma}}</p>
+        <a href="/producto/{{producto.id}}/">
+            <button
+                class="w-full rounded-full border-2 border-custom-brown p-1.5 font-semibold text-custom-brown hover:bg-custom-brown hover:text-white"
+            >
+                Pedir
+            </button>
+        </a>
     </div>
+{% endfor %}
 </div>
 {% endblock %}
