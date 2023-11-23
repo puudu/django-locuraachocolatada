@@ -13,20 +13,20 @@ class Producto (models.Model):
     oferta=models.BooleanField(null=True, blank=True)
     descuento_oferta=models.IntegerField(null=True,blank=True)
     categoria=models.ForeignKey(Categoria, on_delete=models.CASCADE)
-    imagen=models.ImageField(upload_to='img/productos/',null=False, default='img/productos/default_image.jpg')
+    imagen=models.ImageField(null=True, upload_to='productos/imagenes')
     popular = models.BooleanField(null=False, default=False)
 
     def __str__(self):
         return self.nombre
     
 class descripcionEmpresa(models.Model):
-    sobre_nosotros= models.TextField()
-    descripcion_prductos=models.TextField()
-    terminos_y_condiciones=models.TextField()
-    horario_atencion = models.CharField(max_length=120)
-    nro_whatsapp = models.CharField(max_length=12)
-    correo_contacto = models.EmailField(default='contacto@correo.cl')
-    username_instagram = models.CharField(max_length=60)
-    enlace_instagram = models.CharField(max_length=120)
-    username_facebook = models.CharField(max_length=60)
-    enlace_facebook = models.CharField(max_length=120)
+    sobre_nosotros= models.TextField(default='')
+    descripcion_prductos=models.TextField(default='')
+    terminos_y_condiciones=models.TextField(default='')
+    horario_atencion = models.CharField(max_length=120,default='')
+    nro_whatsapp = models.CharField(max_length=12,default='')
+    correo_contacto = models.EmailField(default='')
+    username_instagram = models.CharField(max_length=60,default='')
+    enlace_instagram = models.CharField(max_length=120,default='')
+    username_facebook = models.CharField(max_length=60,default='')
+    enlace_facebook = models.CharField(max_length=120,default='')

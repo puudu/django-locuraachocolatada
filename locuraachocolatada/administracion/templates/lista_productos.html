@@ -1,1 +1,54 @@
-<h3>Lista de productos</h3>
+{% extends "base2.html" %}
+{% block content %}
+<div class="card" style="width:auto; margin-top:40px">
+    <center><h3>Listado de productos</h3></center>
+    <div class="card-body">
+        <table class="table table-striped">
+            <thead>
+                <tr class="">
+                    <th scope="col">ID</td>
+                    <th scope="col">Nombre Producto</td>
+                    <th scope="col">Descripcion</td>
+                    <th scope="col">Oferta</td>
+                    <th scope='col'>Descuento</th>
+                    <th scope='col'>Categoria</th>
+                    <th scope='col'>Popular</th>
+                    <th scope='col'>Modificar</th>
+                    <th scope='col'>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for x in productos %}
+                <tr>
+                    <td>{{x.id}}</td>
+                    <td>{{x.nombre}}</td>
+                    <td>{{x.descripcion}}</td>
+                {% if x.oferta == True %}
+                    <td>Si</td>
+                {% else %}
+                    <td>No</td>
+                {% endif %}
+                {% if x.oferta == True %}
+                    <td>{{x.descuento_oferta}}</td>
+                {% else %}
+                    <td>No aplica</td>
+                {% endif %}
+                    <td>{{x.categoria}}</td>
+                {% if x.popular == True %}
+                    <td>Producto popular</td>
+                {% else %}
+                    <td>No popular</td>
+                {% endif %}
+                    <td>
+                        <button class='btn btn-info'><a href="/actualizarProductos/{{x.id}}" style='text-decoration:none;color:black'>Modificar</a></button>
+                    </td>
+                    <td>
+                        <button class='btn btn-danger'><a href="/eliminarProducto/{{x.id}}" style='text-decoration:none;color:black'>Eliminar</a></button>
+                    </td>
+                </tr>   
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+  </div>
+{% endblock %}

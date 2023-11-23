@@ -1,6 +1,7 @@
 from django.urls import path 
 from . import views
 from administracion import views as admin
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('', views.inicio, name='inicio'),
@@ -11,8 +12,16 @@ urlpatterns = [
 
     # estas urls deberias llevarlas a un views.py dentro de el app administracion
     # y darles otro path, algo como 'admin/crear_producto' mas que nada por un tema de orden
-    path('crear_producto/', admin.crearProducto , name="addProducto"),
-    path('crear_categoria/', admin.crearCategoria , name="addCategoria"),
+    path('Login/',admin.iniciarSesion),
+    path('indexAdmin/', admin.indexAdmin, name='indexAdmin'),
+    path('ListaProductos/',admin.listarProductos,name='ListaProductos'),
+    path('Logout/', auth_views.LogoutView.as_view(), name='Logout'),
+    path('addProducto/', admin.crearProducto , name="addProducto"),
+    path('addCategoria/', admin.crearCategoria , name="addCategoria"),
+    path('eliminarProducto/<int:id>',admin.eliminar_producto,name='eliminarProducto'),
+    path('modificarProducto/<int:id>',admin.editar_producto,name='modificarProducto'),
+    path('actualizarProductos/<int:id>',admin.editar_producto,name='acualizarProductos'),
+    path('sobreNosotros/',admin.sobreNosotros,name='sobreNosotros')
 
 
 ]

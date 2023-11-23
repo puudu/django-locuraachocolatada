@@ -1,0 +1,78 @@
+{% extends "base2.html" %}
+{% block content %}
+<div class="card" style="width:auto; margin-top:40px">
+    <center><h3>Auditoria</h3></center>
+    <div class="card-body">
+       <div class="card" style="width:auto; margin-top:20px">
+        <center><h5>Productos creados</h5></center>
+        <table class="table table-striped">
+            <thead>
+                <tr class="table-success">
+                    <th scope="col">Producto</td>
+                    <th scope="col">Fecha de creacion</td>
+                    <th scope="col">Encargado de creacion</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for x in auditoria %}
+                {% if x.accion == 'Creacion' %}
+                    <tr>
+                        <td>{{x.producto_modificado}}</td>
+                        <td>{{x.fecha}}</td>
+                        <td>{{x.usuario}}</td>
+                    </tr>
+                {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+       </div>
+       <div class="card" style="width:auto; margin-top:20px">
+        <center><h5>Productos Eliminados</h5></center>
+        <table class="table table-striped">
+            <thead>
+                <tr class="table-danger">
+                    <th scope="col">Producto</td>
+                    <th scope="col">Fecha de Eliminacion</td>
+                    <th scope="col">Encargado de creacion</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for x in auditoria %}
+                {% if x.accion == 'Eliminacion' %}
+                    <tr>
+                        <td>{{x.producto_modificado}}</td>
+                        <td>{{x.fecha}}</td>
+                        <td>{{x.usuario}}</td>
+                    </tr>
+                {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+       </div>
+       <div class="card" style="width:auto; margin-top:20px">
+        <center><h5>Productos Modificados</h5></center>
+        <table class="table table-striped">
+            <thead>
+                <tr class="table-info">
+                    <th scope="col">Producto</td>
+                    <th scope="col">Fecha de Modificacion</td>
+                    <th scope="col">Encargado de creacion</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for x in auditoria %}
+                {% if x.accion == 'Modificacion' %}
+                    <tr>
+                        <td>{{x.producto_modificado}}</td>
+                        <td>{{x.fecha}}</td>
+                        <td>{{x.usuario}}</td>
+                    </tr>
+                {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+       </div>
+    </div>
+  </div>
+
+{% endblock %}

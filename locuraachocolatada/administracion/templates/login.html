@@ -1,0 +1,12 @@
+{% extends "base2.html" %}
+{% block content %}
+    {% if user.is_authenticated %}
+    <button><a href="/Logout/">Cerrar Sesión</a></button>
+    {% else %}
+    <form method='POST'>
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value='Iniciar sesion'>
+    </form>
+    {% endif %}
+{% endblock %}
