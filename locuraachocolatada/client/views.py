@@ -3,7 +3,7 @@ from client.models import *
 
 # Create your views here.
 def inicio(request):
-    data = descripcionEmpresa.objects.all()
+    data = descripcionEmpresa.objects.get(id=1)
     productos_promocion = Producto.objects.filter(oferta=True)
     productos_mas_vendidos = Producto.objects.filter(popular=True)
     
@@ -45,7 +45,7 @@ def productos(request):
     return render(request, 'principal/productos.html',data)
 
 def productos_por_categoria(request, categoria_id):
-    data = descripcionEmpresa.objects.all()
+    data = descripcionEmpresa.objects.get(id=1)
     categoria = Categoria.objects.get(id=categoria_id)
     productos = Producto.objects.filter(categoria = categoria)
     categorias = Categoria.objects.all().order_by('id')
@@ -91,4 +91,4 @@ def producto(request, producto_id):
         else:
             producto.porcentaje_descuento = 0
 
-    return render(request, 'principal/producto.html',{'productos':producto, 'data':data})
+    return render(request, 'principal/producto.html',{'producto':producto, 'data':data})

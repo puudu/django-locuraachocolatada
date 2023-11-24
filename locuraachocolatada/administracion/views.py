@@ -5,7 +5,6 @@ from .models import auditoriaProductos
 from client.forms import *
 from administracion.forms import *
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse
 from django.contrib import messages
 
 def iniciarSesion(request):
@@ -80,11 +79,8 @@ def eliminar_producto(request, id):
 def sobreNosotros(request):
     form=DescripcionEmpresaForm()
     if request.method=='POST':
-        form = categoriaForm(request.POST)
+        form = DescripcionEmpresaForm(request.POST)
         if form.is_valid():
             form.save()
         return redirect('/indexAdmin/')
     return render(request,'sobreNosotros.html',{'form':form})
-
-    
-    
